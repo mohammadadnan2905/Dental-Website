@@ -85,42 +85,92 @@
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-card reveal">
-                    <div class="service-icon"><i class="ph-fill ph-sparkle"></i></div>
-                    <h3>Cosmetic Dentistry</h3>
-                    <p>Enhance your smile with our advanced cosmetic treatments, from professional whitening to custom veneers and clear aligners.</p>
-                    <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cosmetic Dentistry" class="service-img">
+                        <div class="service-icon-float"><i class="ph-fill ph-sparkle"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Cosmetic Dentistry</h3>
+                        <p>Enhance your smile with our advanced cosmetic treatments, from professional whitening to custom veneers and clear aligners.</p>
+                        <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    </div>
                 </div>
                 <!-- Service 2 -->
                 <div class="service-card reveal delay-1">
-                    <div class="service-icon"><i class="ph-fill ph-tooth"></i></div>
-                    <h3>General Dentistry</h3>
-                    <p>Preventative care, comprehensive exams, cleanings, and digital X-rays to keep your oral health in perfect condition.</p>
-                    <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="General Dentistry" class="service-img">
+                        <div class="service-icon-float"><i class="ph-fill ph-tooth"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>General Dentistry</h3>
+                        <p>Preventative care, comprehensive exams, cleanings, and digital X-rays to keep your oral health in perfect condition.</p>
+                        <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    </div>
                 </div>
                 <!-- Service 3 -->
                 <div class="service-card reveal delay-2">
-                    <div class="service-icon"><i class="ph-fill ph-first-aid-kit"></i></div>
-                    <h3>Dental Implants</h3>
-                    <p>Permanent, natural-looking solutions for missing teeth. Restore your confidence to eat, speak, and smile freely.</p>
-                    <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dental Implants" class="service-img">
+                        <div class="service-icon-float"><i class="ph-fill ph-first-aid-kit"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Dental Implants</h3>
+                        <p>Permanent, natural-looking solutions for missing teeth. Restore your confidence to eat, speak, and smile freely.</p>
+                        <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking CTA / Banner -->
-    <section id="booking" class="booking-banner section-padding">
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section section-padding">
         <div class="container">
             <div class="booking-glass">
                 <div class="booking-content">
                     <h2>Ready to transform your smile?</h2>
                     <p>Book your consultation today and take the first step towards perfect dental health.</p>
+                    <ul class="booking-features">
+                        <li><i class="ph-fill ph-check-circle"></i> Complimentary Initial Consultation</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Flexible Payment Options</li>
+                        <li><i class="ph-fill ph-check-circle"></i> State-of-the-Art Technology</li>
+                    </ul>
                 </div>
-                <div class="booking-action">
-                    <a href="#" class="btn btn-white btn-large" onclick="alert('Demo: This would open a booking widget (e.g., Calendly or EHR system).')">
-                        <i class="ph-bold ph-calendar-plus"></i>
-                        Schedule Appointment
-                    </a>
+                <div class="booking-form-wrapper">
+                    <form class="appointment-form" onsubmit="event.preventDefault(); alert('Form submission simulated successfully!');">
+                        <h3>Book an Appointment</h3>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="service">Service Needed</label>
+                                <select id="service" required>
+                                    <option value="" disabled selected>Select a Service</option>
+                                    <option value="general">General Dentistry</option>
+                                    <option value="cosmetic">Cosmetic Dentistry</option>
+                                    <option value="implant">Dental Implants</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Confirm Appointment</button>
+                    </form>
                 </div>
             </div>
         </div>
