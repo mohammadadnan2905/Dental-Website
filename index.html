@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightSmile Dental Clinic</title>
+    <title>Family Dental Care Clinic</title>
     <meta name="description" content="Experience premium dental care in an exceptional, modern environment.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦷</text></svg>">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Phosphor Icons for easy modern icons -->
@@ -21,19 +23,35 @@
         <div class="container nav-content">
             <div class="logo">
                 <i class="ph-fill ph-tooth"></i>
-                <span>BrightSmile</span>
+                <span>Family Dental Care</span>
             </div>
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Our Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#reviews">Testimonials</a></li>
                     <li><a href="#contact">Location</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
                 <a href="#booking" class="btn btn-primary" id="nav-book-btn">Book Appointment</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="ph-bold ph-list"></i>
+                </button>
             </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-nav">
+            <ul>
+                <li><a href="#home" class="mobile-link">Home</a></li>
+                <li><a href="#services" class="mobile-link">Our Services</a></li>
+                <li><a href="#gallery" class="mobile-link">Gallery</a></li>
+                <li><a href="#reviews" class="mobile-link">Testimonials</a></li>
+                <li><a href="#contact" class="mobile-link">Location</a></li>
+                <li><a href="#booking" class="btn btn-primary btn-block mobile-link" style="margin-top: 1rem;">Book Appointment</a></li>
+            </ul>
         </div>
     </header>
 
@@ -119,6 +137,42 @@
                         <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
                     </div>
                 </div>
+                <!-- Service 4 -->
+                <div class="service-card reveal">
+                    <div class="service-img-wrapper">
+                        <img src="assets/images/orthodontics_braces.png" alt="Orthodontics" class="service-img">
+                        <div class="service-icon-float"><i class="ph-fill ph-bandaids"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Orthodontics</h3>
+                        <p>Straighten your smile with traditional braces or clear aligner solutions tailored for both teens and adults.</p>
+                        <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card reveal delay-1">
+                    <div class="service-img-wrapper">
+                        <img src="assets/images/pediatric_dentist.png" alt="Pediatric Dentistry" class="service-img">
+                        <div class="service-icon-float"><i class="ph-fill ph-baby"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Pediatric Dentistry</h3>
+                        <p>Gentle, stress-free dental care designed exclusively for children to build healthy habits early.</p>
+                        <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card reveal delay-2">
+                    <div class="service-img-wrapper">
+                        <img src="assets/images/teeth_whitening.png" alt="Teeth Whitening" class="service-img">
+                        <div class="service-icon-float"><i class="ph-fill ph-star"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Teeth Whitening</h3>
+                        <p>Professional grade whitening treatments to dramatically brighten your smile safely and effectively.</p>
+                        <a href="#" class="service-link">Learn More <i class="ph-bold ph-caret-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -137,7 +191,7 @@
                     </ul>
                 </div>
                 <div class="booking-form-wrapper">
-                    <form class="appointment-form" onsubmit="event.preventDefault(); alert('Form submission simulated successfully!');">
+                    <form id="appointment-form" class="appointment-form">
                         <h3>Book an Appointment</h3>
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -153,20 +207,44 @@
                                 <input type="tel" id="phone" placeholder="(555) 123-4567" required>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" required>
+                                <option value="" disabled selected>Select a Service</option>
+                                <option value="general">General Dentistry</option>
+                                <option value="cosmetic">Cosmetic Dentistry</option>
+                                <option value="implant">Dental Implants</option>
+                                <option value="orthodontics">Orthodontics</option>
+                                <option value="pediatric">Pediatric Dentistry</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                         <div class="form-row">
-                            <div class="form-group">
-                                <label for="service">Service Needed</label>
-                                <select id="service" required>
-                                    <option value="" disabled selected>Select a Service</option>
-                                    <option value="general">General Dentistry</option>
-                                    <option value="cosmetic">Cosmetic Dentistry</option>
-                                    <option value="implant">Dental Implants</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label for="date">Preferred Date</label>
                                 <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <select id="time" required>
+                                    <option value="" disabled selected>Select a Time</option>
+                                    <option value="9:00 AM">9:00 AM</option>
+                                    <option value="9:30 AM">9:30 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="10:30 AM">10:30 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="11:30 AM">11:30 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="12:30 PM">12:30 PM</option>
+                                    <option value="1:00 PM">1:00 PM</option>
+                                    <option value="1:30 PM">1:30 PM</option>
+                                    <option value="2:00 PM">2:00 PM</option>
+                                    <option value="2:30 PM">2:30 PM</option>
+                                    <option value="3:00 PM">3:00 PM</option>
+                                    <option value="3:30 PM">3:30 PM</option>
+                                    <option value="4:00 PM">4:00 PM</option>
+                                </select>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Confirm Appointment</button>
@@ -203,13 +281,77 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Modern Clinic</h2>
+                <p>Designed for your absolute comfort and peace of mind.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clinic Interior"></div>
+                <div class="gallery-item reveal delay-1"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Treatment Room"></div>
+                <div class="gallery-item reveal delay-2"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Advanced Equipment"></div>
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Waiting Area"></div>
+                <div class="gallery-item reveal delay-1"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Friendly Staff"></div>
+                <div class="gallery-item reveal delay-2"><img src="assets/images/dental_consultation.png" alt="Consultation"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Location Section -->
+    <section id="contact" class="contact-section section-padding bg-light">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2>Visit Our Clinic</h2>
+                    <p>We are conveniently located in the medical district with ample free parking.</p>
+                    <div class="contact-methods">
+                        <div class="method-card">
+                            <div class="icon-box"><i class="ph-fill ph-map-pin"></i></div>
+                            <div>
+                                <h4>Our Address</h4>
+                                <p>1600 Amphitheatre Pkwy<br>Mountain View, CA 94043</p>
+                            </div>
+                        </div>
+                        <div class="method-card">
+                            <div class="icon-box"><i class="ph-fill ph-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(555) 123-4567<br>(555) 123-4568 (Emergency)</p>
+                            </div>
+                        </div>
+                        <div class="method-card">
+                            <div class="icon-box"><i class="ph-fill ph-clock"></i></div>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map reveal delay-1">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=1600%20Amphitheatre%20Pkwy,%20Mountain%20View,%20CA%2094043&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: var(--radius-xl); box-shadow: var(--shadow-md);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="logo footer-logo">
                     <i class="ph-fill ph-tooth"></i>
-                    <span>BrightSmile</span>
+                    <span>Family Dental Care</span>
                 </div>
                 <p>Premium dental care focused on your comfort and long-term oral health.</p>
                 <div class="social-links">
@@ -229,19 +371,31 @@
                 </ul>
             </div>
             
-            <div class="footer-contact" id="contact">
+            <div class="footer-contact" id="footer-contact">
                 <h4>Contact Us</h4>
                 <ul>
                     <li><i class="ph-fill ph-map-pin"></i> 123 Dental Avenue, Suite 100, Medical District</li>
                     <li><i class="ph-fill ph-phone"></i> (555) 123-4567</li>
-                    <li><i class="ph-fill ph-envelope"></i> hello@brightsmiledental.demo</li>
+                    <li><i class="ph-fill ph-envelope"></i> hello@familydentalcare.demo</li>
                 </ul>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2026 BrightSmile Dental Clinic Demo. Created for Sales Presentation.</p>
+            <p>&copy; 2026 Family Dental Care Clinic Demo. Created for Sales Presentation.</p>
         </div>
     </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content text-center">
+            <div class="modal-icon-wrapper">
+                <i class="ph-fill ph-check-circle modal-icon"></i>
+            </div>
+            <h3>Request Received!</h3>
+            <p id="modal-message">Your appointment is booked Successfully on <strong id="modal-date-display"></strong> at <strong id="modal-time-display"></strong>.</p>
+            <button id="close-modal" class="btn btn-primary btn-block">Awesome, thanks!</button>
+        </div>
+    </div>
 
     <!-- Main Script -->
     <script src="assets/js/script.js"></script>
